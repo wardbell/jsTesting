@@ -2,7 +2,7 @@
 (function () {
 "use strict";
 
-module("02-Async");
+module("10 - Async Tests");
 
 // None of our tests should take longer than 2 seconds.
 QUnit.config.testTimeout = 3000;

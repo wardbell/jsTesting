@@ -79,13 +79,15 @@
     </Content>
     <Content Include="tests\Jasmine\vendor\jasmineTestRunnerConfig.js" />
     <Content Include="tests\Jasmine\vendor\sinon.js" />
-    <Content Include="tests\QUnit\asyncTests.js" />
+    <Content Include="tests\QUnit\10-asyncTests.js" />
+    <Content Include="tests\QUnit\02-moduleTests.js" />
+    <Content Include="tests\QUnit\testFns.js" />
     <Content Include="tests\QUnit\vendor\sinon.js" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="tests\QUnit\vendor\qunit.css" />
     <Content Include="tests\QUnit\vendor\qunit.js" />
-    <Content Include="tests\QUnit\tests.js" />
+    <Content Include="tests\QUnit\01-firstTests.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

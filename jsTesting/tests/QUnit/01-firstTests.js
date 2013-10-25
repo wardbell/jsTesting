@@ -1,7 +1,7 @@
 ﻿(function () {
 "use strict";
 
-module("01-Beginning");
+module("01 - First Tests");
 
 test("always passes", function () {
     ok(true, "it passed");
@@ -12,7 +12,7 @@ test("always passes", function () {
 
 
 test("always fails", function () {
-    ok(true, "it fails deliberately.");
+    ok(false, "it fails deliberately.");
 });
 
 
