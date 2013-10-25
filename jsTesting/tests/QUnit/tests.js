@@ -57,34 +57,4 @@ test("qunit exception handling", function () {
 });
 
 
-
-
-
-/*** Async Testing ***/
-module("02-Async");
-
-// None of our tests should take longer than 2 seconds.
-QUnit.config.testTimeout = 3000;
-
-// not a fan of QUnity asyncTest method. Use stop() explicitly
-test("async test", 1, function () {
-
-    var msg;
-    someComplicatedSetupThatCouldFail();
-
-    stop(); // going async
-    setTimeout(function () {
-        msg = "Giants won the 2012 World Series";
-        assertGotMsg();
-    }, 2000);
-
-    function assertGotMsg() {
-        ok(msg, "Got the message: " + msg);
-        start(); // resume test
-    }
-
-    function someComplicatedSetupThatCouldFail() { }
-});
-
-
 })();

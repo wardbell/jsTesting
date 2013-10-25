@@ -2,21 +2,36 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
 
+        qunit: {
+            all: ['jsTesting/tests/Qunit/*.html']
+        },
+
+
         jasmine: {
             pivotal: {
                 src: 'jsTesting/code/*.js',
                 options: {
-                    specs: [
+                    vendor: [
+                        'jsTesting/vendor/jquery-2.0.3.min.js',
+                        'jsTesting/vendor/angular.js',
+                        'jsTesting/vendor/angular-animate.js',
+                        'jsTesting/vendor/angular-route.js',
+                        'jsTesting/vendor/angular-sanitize.js',
+                        'jsTesting/vendor/angular-mocks.js',
+
+                        'jsTesting/tests/Jasmine/vendor/sinon.js',
+                        'jsTesting/tests/Jasmine/vendor/jasmine-async.min.js'
+
+                    ],
+                    helpers:[
                         'jsTesting/tests/Jasmine/testFns.js',
                         'jsTesting/tests/Jasmine/customMatchers.js',
+                    ],
+                    specs: [
                         'jsTesting/tests/Jasmine/tests.js'
                     ]
                 }
             }
-        },
-
-        qunit: {
-            all: ['jsTesting/tests/Qunit/*.html']
         },
 
         jshint: {

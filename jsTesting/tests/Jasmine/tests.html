@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>jsTesting Jasmine Tests</title>
+
+    <link rel="shortcut icon" type="image/png" href="vendor/jasmine_icon.png" />
+    <link rel="stylesheet" type="text/css" href="vendor/jasmine.css">
+    <script src="vendor/jasmine.js"></script>
+    <script src="vendor/jasmine-html.js"></script>
+
+</head>
+<body>
+    <!-- vendor application libraries -->
+    <script src="../../vendor/jquery-2.0.3.min.js"></script>
+    <script src="../../vendor/angular.js"></script>
+    <script src="../../vendor/angular-animate.js"></script>
+    <script src="../../vendor/angular-route.js"></script>
+    <script src="../../vendor/angular-sanitize.js"></script>
+    <script src="../../vendor/angular-mocks.js"></script>
+
+    <!-- vendor test libraries -->
+    <script src="vendor/sinon.js"></script>
+    <script src="vendor/jasmine-async.min.js"></script>
+
+    <!-- *** Source *** -->
+    <script src="../../code/app.js"></script>
+    <script src="../../code/code.js"></script>
+
+    <!-- *** Tests *** -->
+    <!-- test helpers -->
+    <script src="testFns.js"></script>
+    <script src="customMatchers.js"></script>
+
+    <!-- tests -->
+    <script src="tests.js"></script>
+
+    <!-- configure and run -->
+    <script src="vendor/jasmineTestRunnerConfig.js"></script>
+
+</body>
+</html>
