@@ -1,29 +1,58 @@
 ﻿/*** Async Testing ***/
-(function () {
-"use strict";
+(function (code) {
+    "use strict";
 
-module("10 - Async Tests");
+    // None of our async tests should take longer than 2 seconds.
+    QUnit.config.testTimeout = 3000;
 
-// None of our tests should take longer than 2 seconds.
-QUnit.config.testTimeout = 3000;
+    module("10 - Async Tests");
 
-asyncTest("async test", 1, function () {
+    /*-- setTimeout async test --*/
 
-    var msg;
-    someComplicatedSetupThatCouldFail();
+    asyncTest("setTimeout async test", 1, function () {
 
-    setTimeout(function () {
-        msg = "Giants won the 2012 World Series";
-        assertGotMsg();
-    }, 2000);
+        var msg;
+        someComplicatedSetupThatCouldFail();
 
-    function assertGotMsg() {
-        ok(msg, "Got the message: " + msg);
-        start(); // resume test
-    }
+        setTimeout(function () {
+            msg = "Giants won the 2012 World Series";
+            assertGotMsg();
+        }, 1000);    // wait a second
 
-    function someComplicatedSetupThatCouldFail() { }
-});
+        function assertGotMsg() {
+            ok(msg, "Got the message: " + msg);
+            start(); // resume testrunner
+        }
+
+        function someComplicatedSetupThatCouldFail() { }
+    });
 
 
-})();
+
+
+
+    /*-- DOM async test --*/
+
+    asyncTest("DOM manipulation async test", 1, function () {
+
+        // ARRANGE
+        var el = $("<div>the results</div>");
+        $('#qunit-fixture').append(el);        // QUnit testrunner resets this div each test
+        var calc = new code.Calculator(el);
+
+        // ACT
+        calc.hideResult(callback);
+
+        // ASSERT
+        function callback() {
+            var displayStyle = el.css("display");
+            equal(displayStyle, "none",
+                "calculator results should be hidden; display style is '{0}'."
+                 .format(displayStyle));
+            start(); // resume testrunner
+        }
+
+    });
+
+
+})(this.code);

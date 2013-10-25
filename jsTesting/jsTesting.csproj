@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="code\app.js" />
-    <Content Include="code\code.js" />
+    <Content Include="code\calculator.js" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="tests\Jasmine\calculatorAsyncSpec.js" />
