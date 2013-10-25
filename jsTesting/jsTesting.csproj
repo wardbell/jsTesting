@@ -61,6 +61,7 @@
     <Content Include="code\code.js" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="tests\Jasmine\calculatorAsyncSpec.js" />
     <Content Include="tests\Jasmine\customMatchers.js" />
     <Content Include="tests\Jasmine\testFns.js" />
     <Content Include="tests\Jasmine\specs.html" />
@@ -91,7 +92,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="tests\Jasmine\specs.js" />
+    <Content Include="tests\Jasmine\firstSpec.js" />
     <Content Include="vendor\angular.js" />
     <Content Include="vendor\angular.min.js">
       <DependentUpon>angular.js</DependentUpon>

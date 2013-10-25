@@ -1,4 +1,6 @@
-﻿(function (definition) {
+﻿/* Test helper functions for Jasmine */
+
+(function (definition) {
 
     // CommonJS
     if (typeof exports === "object") {
@@ -16,9 +18,11 @@
     'use strict';
 
     extendString();
+    extendAsyncSpec();
 
     var fns = {
         /* helper fns go here */
+        xasync: {it: xit, xit: xit}
     };
 
     return fns;
@@ -56,5 +60,12 @@
         };
     }
 
+    /*********************************************************
+    * Extend AsyncSpec with ability to disable its 'it'
+    *********************************************************/
+    function extendAsyncSpec() {
+        var fn = AsyncSpec.prototype;
+        if (!fn.xit) { fn.xit = xit; }
+    }
 
 });
