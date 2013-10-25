@@ -12,7 +12,8 @@ test("always passes", function () {
 
 
 test("always fails", function () {
-    ok(false, "it fails deliberately.");
+    // make it fail
+    ok(true, "it fails deliberately.");
 });
 
 

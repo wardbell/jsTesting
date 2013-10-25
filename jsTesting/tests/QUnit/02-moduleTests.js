@@ -3,7 +3,7 @@
  ********************************************/
 
 (function () {
-    "use strict";
+    //"use strict";
 
     // "Resources" outside of the tests with which tests could interact
     var testCounter = 0;

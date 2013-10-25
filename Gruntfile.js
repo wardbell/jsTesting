@@ -28,7 +28,7 @@ module.exports = function (grunt) {
                         'jsTesting/tests/Jasmine/customMatchers.js',
                     ],
                     specs: [
-                        'jsTesting/tests/Jasmine/tests.js'
+                        'jsTesting/tests/Jasmine/*spec?.js'
                     ]
                 }
             }
