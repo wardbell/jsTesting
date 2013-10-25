@@ -1,4 +1,9 @@
-﻿test("always passes", function() {
+﻿(function () {
+"use strict";
+
+module("01-Beginning");
+
+test("always passes", function () {
     ok(true, "it passed");
 });
 
@@ -7,10 +12,8 @@
 
 
 test("always fails", function () {
-    ok(false, "it fails");
+    ok(true, "it fails deliberately.");
 });
-
-
 
 
 
@@ -58,6 +61,7 @@ test("qunit exception handling", function () {
 
 
 /*** Async Testing ***/
+module("02-Async");
 
 // None of our tests should take longer than 2 seconds.
 QUnit.config.testTimeout = 3000;
@@ -70,8 +74,8 @@ test("async test", 1, function () {
 
     stop(); // going async
     setTimeout(function () {
-        msg = "Giants won the 2012 World Series"
-        assertGotMsg()
+        msg = "Giants won the 2012 World Series";
+        assertGotMsg();
     }, 2000);
 
     function assertGotMsg() {
@@ -81,3 +85,6 @@ test("async test", 1, function () {
 
     function someComplicatedSetupThatCouldFail() { }
 });
+
+
+})();

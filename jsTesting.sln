@@ -1,7 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QUnitIntro", "QUnitIntro\QUnitIntro.csproj", "{3A24F168-07A8-4A2A-A93E-4F0469E21F0A}"
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20918.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jsTesting", "jsTesting\jsTesting.csproj", "{3A24F168-07A8-4A2A-A93E-4F0469E21F0A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Grunt", "Grunt", "{C879BB0E-E7E8-4A1F-85D4-451790097B95}"
+	ProjectSection(SolutionItems) = preProject
+		Gruntfile.js = Gruntfile.js
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

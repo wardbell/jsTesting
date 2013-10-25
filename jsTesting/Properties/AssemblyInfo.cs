@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("QUnitIntro")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("jsTesting")]
+[assembly: AssemblyDescription("Tutorial on testing in JavaScript")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("QUnitIntro")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2012")]
+[assembly: AssemblyCompany("Ward Bell")]
+[assembly: AssemblyProduct("jsTesting")]
+[assembly: AssemblyCopyright("Copyright © Ward Bell 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

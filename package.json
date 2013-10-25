@@ -1,0 +1,30 @@
+{
+  "name": "jsTesting",
+  "version": "0.0.0",
+  "description": "Code for \"Unit Testing 101 in JavaScript\"",
+  "main": "index.js",
+  "dependencies": {
+    "grunt": "~0.4.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-jasmine": "~0.5.2",
+    "grunt-contrib-qunit": "~0.3.0",
+    "grunt-contrib-jshint": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wardbell/jsTesting.git"
+  },
+  "keywords": [
+    "JavaScript"
+  ],
+  "author": "Ward Bell",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/wardbell/jsTesting/issues"
+  }
+}

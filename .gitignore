@@ -80,6 +80,12 @@ ipch/
 # ReSharper is a .NET coding add-in
 _ReSharper*
 
+#################
+## Node / npm
+#################
+node_modules
+
+
 # Installshield output folder
 [Ee]xpress
 

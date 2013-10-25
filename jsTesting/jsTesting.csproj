@@ -57,16 +57,76 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\qunit.css" />
-    <Content Include="Scripts\qunit.js" />
-    <Content Include="Scripts\tests.js" />
+    <Content Include="code\code.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tests\Jasmine\vendor\jasmine.js" />	
+    <Content Include="tests\Jasmine\vendor\jasmine-async.js" >
+      <DependentUpon>jasmine.js</DependentUpon>
+    </Content>
+    <Content Include="tests\Jasmine\vendor\jasmine-async.min.js" >
+      <DependentUpon>jasmine-async.js</DependentUpon>
+    </Content>
+    <Content Include="tests\Jasmine\vendor\jasmine-html.js" >
+      <DependentUpon>jasmine.js</DependentUpon>
+    </Content>
+    <Content Include="tests\Jasmine\vendor\jasmine.css" >
+      <DependentUpon>jasmine.js</DependentUpon>
+    </Content>
+    <Content Include="tests\Jasmine\vendor\sinon-1.7.1.js" />	
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Content Include="tests\QUnit\qunit.css" />
+    <Content Include="tests\QUnit\qunit.js" />
+    <Content Include="tests\QUnit\tests.js" />
     <Content Include="Web.config" />
   </ItemGroup>
+  
+    <ItemGroup>
+    <Content Include="tests\Jasmine\tests.js" />
+    <Content Include="vendor\angular.js" />
+    <Content Include="vendor\angular.min.js">
+      <DependentUpon>angular.js</DependentUpon>
+    </Content>
+    <Content Include="vendor\angular.min.js.map">
+      <DependentUpon>angular.js</DependentUpon>
+    </Content>
+    <Content Include="tests\Jasmine\vendor\angular-mocks.js"/>
+    <Content Include="vendor\angular-animate.js">
+      <DependentUpon>angular.js</DependentUpon>
+    </Content>
+    <Content Include="vendor\angular-animate.min.js">
+      <DependentUpon>angular-animate.js</DependentUpon>
+    </Content>
+    <Content Include="vendor\angular-route.js">
+      <DependentUpon>angular.js</DependentUpon>
+    </Content>
+    <Content Include="vendor\angular-route.min.js">
+      <DependentUpon>angular-route.js</DependentUpon>
+    </Content>
+    <Content Include="vendor\angular-sanitize.js">
+      <DependentUpon>angular.js</DependentUpon>
+    </Content>
+    <Content Include="vendor\angular-sanitize.min.js">
+      <DependentUpon>angular-sanitize.js</DependentUpon>
+    </Content>
+    <Content Include="vendor\angular-animate.min.js.map">
+      <DependentUpon>angular-animate.js</DependentUpon>
+    </Content>
+    <Content Include="vendor\angular-route.min.js.map">
+      <DependentUpon>angular-route.js</DependentUpon>
+    </Content>
+    <Content Include="vendor\angular-sanitize.min.js.map">
+      <DependentUpon>angular-sanitize.js</DependentUpon>
+    </Content>
+  </ItemGroup>
+
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Index.html" />
+    <Content Include="tests\QUnit\tests.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -74,6 +134,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -89,7 +150,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:25248/</IISUrl>
+          <IISUrl>http://localhost:22832/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
