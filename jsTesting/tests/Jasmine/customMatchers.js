@@ -4,7 +4,7 @@
     beforeEach(function () {
         this.addMatchers({                                        // jshint ignore:line
             toFail: toFail,
-            toRegExMatch: toRegExMatch
+            toMatch: toMatch
         });
     });
 
@@ -24,7 +24,7 @@
      * Jasmine RegExp matcher
      * Ex: expect(error.message).toRegExMatch(/not authorized to save/i);
      *********************************************************/
-    function toRegExMatch(regex, template) {
+    function toMatch(regex, template) {
 
         template = template || 'expected "{0}" to {1}match "{2}"';
 

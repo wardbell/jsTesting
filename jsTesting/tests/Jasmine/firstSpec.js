@@ -17,6 +17,15 @@
             expect(2).toBe(2);
         });
 
+
+
+        // Custom Matchers (see my customMatchers.js)
+
+        it('should succeed with custom regex matcher', function () {
+            expect('The Quick Brown Fox Jumped over the Lazy Dog')
+            .toMatch(/brown fox/i);
+        });
+
     });
 
 
