@@ -3,11 +3,11 @@
 
     var Calculator = code.Calculator;
 
-    // jasmine-async stuff ... we'll explain below
-    var async = new AsyncSpec(this);
-    var xasync = testFns.xasync; // to disable async tests with 'x' prefix
+    // jasmine-async..js stuff ... used below
+    var async = new AsyncSpec(this); // create an async test class
+    var xasync = testFns.xasync;     // to disable async tests with 'x' prefix
 
-    describe("Calculator", function () {
+    describe("Calculator async", function () {
         var calc;
 
         describe("FX tests", function () {
@@ -93,6 +93,8 @@
 
 
 
+
+            /*---- setTimeout tests -----*/
             describe("pause before hiding test", function () {
 
                 var pauseTime = Calculator.PAUSE_MS + "ms";
@@ -132,9 +134,9 @@
                     jasmine.Clock.tick(Calculator.PAUSE_MS - 1 ); 
                     expect(donePausing).toBeFalsy(); // still not called
 
-                    // move time ahead the last ms.
+                    // move time ahead a few ms.
                     jasmine.Clock.tick(100); 
-                    expect(donePausing).toBeTruthy(); // called now
+                    expect(donePausing).toBeTruthy(); // called by now
 
                     function callback() {
                         donePausing = true;
