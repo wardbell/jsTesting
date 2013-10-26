@@ -7,7 +7,7 @@
     var async = new AsyncSpec(this); // create an async test class
     var xasync = testFns.xasync;     // to disable async tests with 'x' prefix
 
-    describe("Calculator async", function () {
+    describe("Async calculator", function () {
         var calc;
 
         describe("FX tests", function () {

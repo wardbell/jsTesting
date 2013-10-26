@@ -19,6 +19,10 @@
         return a + b;
     };
 
+    Calculator.prototype.divide = function (a, b) {
+        return a / b;
+    };
+
 
 
 
