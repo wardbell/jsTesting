@@ -4,29 +4,44 @@ Code and slides for talks to .NET developers about JavaScript testing.
 
 
 ## Unit Testing 101 in JavaScript talk ##
+Talk given at DevIntersections in Oct 2013
 
-There are at least two ways to demo the code: in VS/PageInspector and in Chrome/Sublime. They are described below
+## Demo'ing with Chrome and Visual Studio ##
+While it is difficult to make changes from within Chrome, it is easy to position a Chrome browser window on one side and Visual Studio on the other.
 
-## Demo'ing JavaScript4DotNet with Page Inspector ##
-At Dev Conn, Ward alternated between slides and the running inside Visual Studio 2012 with PageInspector. The results display in PageInspector window on the left while the corresponding JS file is displayed in a text editor window on the right.
+The update sequence: make change in VS, save, refresh browser.
 
-He made changes to the code (e.g., moved the PAUSE comment down to reveal more running code) and hit [Ctrl-Alt-Enter] to both save the file and refresh the PageInspector window.
 
-Think of it as a poor man's jsFiddle. Why? If was all in jsFiddle originally. But wireless failed at the conference - no wireless, no jsFiddle.
-
-Here's what it looks like when in the middle of a change:
-
-![JS4NetDev running in PageInspector](https://raw.github.com/wardbell/js4netdev/master/EditInVSwithPageInspector.png)
-
-## Demo'ing JavaScript4DotNet with Chrome and Sublime ##
-Ward later discovered that this works very well, perhaps better than Page Inspector. While it is difficult to make changes from within Chrome, it was easy to position a Chrome browser window on the left and a SublimeText 2 editor window on the right as seen in this screenshot:
+## Demo'ing with Chrome and Sublime ##
+Take the same approach with Sublime in place of Visual Studio.
 
 ![JS4NetDev running in Chrome+Sublime](https://raw.github.com/wardbell/js4netdev/master/EditInSublime.png)
 
-Start by showing "index.html" in Chrome.
+Start by showing "~/test/qunit/tests.html" in Chrome.
 
 Toggle the Sublime folder pane (side bar) on/off with [Ctrl-K,Crtrl-B];
 
 The update sequence: make change in Sublime, save, refresh browser. This turns out to be pretty darned fast.
+
+## Grunt ##
+Useful development and testing tasks can be handled by grunt. The app is setup for grunt (see packages.json and Gruntfile.js)
+
+Launch a command window 
+
+Change directory to the jsTesting root directory
+
+If you're here for the first time, let npm install the dependencies.
+
+    npm install
+
+
+Now execute one of these grunt commands.
+
+Grunt targets:
+
+- `grunt jasmine`: run the jasmine tests
+- `grunt qunit`: run the qunit tests
+- `grunt jshin`t: lint the JS files
+- `grunt`:  this default target runs jshint, jasmine, and qunit.
 
 Best of luck with your presentation.
