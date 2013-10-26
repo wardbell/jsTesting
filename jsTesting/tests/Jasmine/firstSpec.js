@@ -88,8 +88,33 @@
 
 
 
-        // Custom Matchers (see my customMatchers.js)
+        // Custom Matchers 
+        it('should succeed with custom cool matcher', function () {
 
+            // usually add matchers in a beforeEach
+            this.addMatchers({
+                toBeCool: function () {
+                                                                         /* jshint ignore:start */
+
+                    var isCool = this.actual === (arguments[0] || 'Ward');
+                    var message = this.actual + (isCool ? ' is cool.' : ' is not cool.');
+                    this.message = function () { return message; };
+                    console.log(message);
+                    return isCool;
+                                                                        /* jshint ignore:end */
+                }
+            });
+
+            expect('Ward').toBeCool();
+
+            expect('Sam').not.toBeCool(); // not cool
+
+            expect('You').toBeCool('You');
+        });
+
+
+
+        // defined in customMatchers.js
         it('should succeed with custom regex matcher', function () {
 
             expect('Spider-man Menaces City')
@@ -100,7 +125,7 @@
         });
 
 
-
+        // defined in customMatchers.js
         it('should succeed with custom toFail matcher', function () {
             expect().not.toFail('fail deliberately!');
         });
