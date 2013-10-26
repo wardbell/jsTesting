@@ -5,7 +5,7 @@
     // None of our async tests should take longer than 2 seconds.
     QUnit.config.testTimeout = 3000;
 
-    module("10 - Async Tests");
+    module("Async Tests");
 
     /*-- setTimeout async test --*/
 

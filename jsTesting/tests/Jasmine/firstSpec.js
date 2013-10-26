@@ -1,6 +1,6 @@
 ﻿/* The most basic jasmine tests */
 
-// Se matchers https://github.com/pivotal/jasmine/wiki/Matchers
+// See matchers https://github.com/pivotal/jasmine/wiki/Matchers
 
 (function () {
     "use strict";
@@ -87,21 +87,19 @@
 
 
 
-
         // Custom Matchers 
         it('should succeed with custom cool matcher', function () {
 
             // usually add matchers in a beforeEach
             this.addMatchers({
                 toBeCool: function () {
-                                                                         /* jshint ignore:start */
-
+                                                                        /* jshint ignore:start */
                     var isCool = this.actual === (arguments[0] || 'Ward');
                     var message = this.actual + (isCool ? ' is cool.' : ' is not cool.');
                     this.message = function () { return message; };
+                                                                        /* jshint ignore:end */
                     console.log(message);
                     return isCool;
-                                                                        /* jshint ignore:end */
                 }
             });
 

@@ -9,8 +9,18 @@
     code.Calculator = Calculator;
 
     function Calculator(displayElement) {
-        this.$el = $(displayElement); // wrap as jQuery element
+
+        this.$el = $(displayElement || "<div></div>"); // wrap as jQuery element
+
     }
+
+
+    Calculator.prototype.add = function (a, b) {
+        return a + b;
+    };
+
+
+
 
     Calculator.HIDE_RESULT_MS = 500;
     Calculator.PAUSE_MS = 1000;

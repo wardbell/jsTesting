@@ -36,7 +36,7 @@
     // Notice that each test "pollutes" the resources
     // Tests shouldn't share state!
 
-    module("02 - Module Tests");
+    module("Module Tests");
 
     test("first test without LifeCycle", function () {
         moduleTest("first");
@@ -59,7 +59,7 @@
 
     // Use setup/teardown to isolate state and cleanup resources
 
-    module("02 - Module Tests", {
+    module("Module Tests", {
         setup: setup,
         teardown: teardown
     });
