@@ -11,18 +11,31 @@
     function Calculator(displayElement) {
 
         this.$el = $(displayElement || "<div></div>"); // wrap as jQuery element
-
+        this.log = Calculator.defaultLogger;
     }
 
-
     Calculator.prototype.add = function (a, b) {
-        return a + b;
+        return this.log("add", a + b, a, b);
     };
+
 
     Calculator.prototype.divide = function (a, b) {
-        return a / b;
+        if (!b && this.onError) {
+            this.onError("denominator '{0}' is out-of-bounds".format(b));
+        }
+        return this.log("divide", a / b, a, b);
     };
 
+
+
+    // report how calculator operations were called
+    Calculator.defaultLogger = function (op, result) {
+        var args = [].slice.call(arguments, 2).join(', ');
+
+        var template = "calc.{0} called with args [{1}]; returned '{2}'";
+        console.log(template.format(op, args, result));
+        return result; // does nothing
+    };
 
 
 

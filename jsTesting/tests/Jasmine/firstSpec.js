@@ -22,7 +22,12 @@
             expect().toBeFalsy();
         });
 
+        it('should handle true ... period', function () {
+            expect(true).toBe(true);
 
+            expect(1).not.toBe(true);
+            expect({}).not.toBe(true);
+        });
 
         it('should be a specifed value', function () {
 
