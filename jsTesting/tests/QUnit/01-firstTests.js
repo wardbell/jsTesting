@@ -47,13 +47,22 @@ test("assert with deep equals", 2, function () {
 
 test("qunit exception handling", function () {
 
-    var CustomError = function () { };// custom error type
-    CustomError.message = "custom error message";
+    // a custom error type
+    var CustomError = function (msg) {
+        this.message = msg || "custom error message";
+    };
+
+    raises(function () {
+        throw new Error();
+    }, "must throw some kind of error");
+
+    raises(function () {
+        throw new CustomError();
+    },  "must throw some kind of error");
 
     raises(function () {
         throw new CustomError();
     }, CustomError, "must throw CustomError");
-
 
 });
 
