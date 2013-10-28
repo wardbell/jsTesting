@@ -67,22 +67,41 @@
 
     test("qunit exception handling", function () {
 
-        // a custom error type
-        var CustomError = function (msg) {
-            this.message = msg || "custom error message";
-        };
-
         raises(function () {
             throw new Error();
         }, "must throw some kind of error");
 
-        raises(function () {
-            throw new CustomError();
-        },  "must throw some kind of error");
+    });
 
+    // What if you have a custom error type?
+    // a custom error type
+    var CustomError = function (msg) {
+        this.message = msg || "custom error message";
+    };
+
+    test("qunit exception handling with custom error: passes when it shouldn't", function () {
+
+        // Doesn't care.
+        // Passes ... a false positive
         raises(function () {
+            console.log("about to throw unrelated error");
+            throw new error('some unrelated error');
+
+            // never gets here
+            console.log("about to throw CustomError");
             throw new CustomError();
-        }, CustomError, "must throw CustomError");
+        },  "Oops. We wanted to see the CustomError. but we got a different exception");
+    })
+
+    test("qunit exception handling with custom error: correct", function () {
+        raises(function () {
+            //console.log("about to throw unrelated error");
+            //throw new error('some unrelated error');
+
+            // never gets here
+            console.log("about to throw CustomError");
+            throw new CustomError();
+        }, CustomError, "should throw CustomError");
 
     });
 
