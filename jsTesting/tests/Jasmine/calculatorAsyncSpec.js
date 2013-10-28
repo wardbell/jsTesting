@@ -15,8 +15,7 @@
 
             beforeEach(function () {
 
-                el = $('<style>#container {visibility:hidden}</style>'+
-                       '<div id="container">the results</div>');
+                el = $('<div id="calcResults">the results</div>');
                 $('body').append(el);
                 calc = new Calculator(el); 
 
@@ -26,7 +25,6 @@
                 el.remove(); // remove element from DOM after each test
             });
 
-
             /*** TESTS ***/
 
             describe("hide result test", function () {
@@ -34,16 +32,20 @@
 
                 xit("should fail w/ non-async test", function () {
 
+                    logDisplayState();
                     calc.hideResult(callback);
+                    logDisplayState();
 
                     function callback() {
                         // not actually called within this tests timeframe!
                         // it will infect a later-running test!
-                        expect(el.css("display")).toBe("none");
+                        logDisplayState();
+                        expect(getDisplayState()).toBe("none");
                     }
 
                     // won't work called here because it hasn't happened in the DOM yet
-                    expect(el.css("display")).toBe("none");
+                    logDisplayState();
+                    expect(getDisplayState()).toBe("none");
                 });
 
                 /*---- runs/waitsFor -----*/
@@ -65,7 +67,7 @@
                     600 /*Timeout value ... 100ms longer than the fadeout. Fails at 100.*/);
 
                     runs(function () {
-                        expect(el.css("display")).toBe("none");
+                        expect(getDisplayState()).toBe("none");
                     });
 
                     function callback() {
@@ -84,7 +86,7 @@
                     calc.hideResult(callback);
 
                     function callback() {
-                        expect(el.css("display")).toBe("none");
+                        expect(getDisplayState()).toBe("none");
                         done();
                     }
                 });
@@ -146,6 +148,15 @@
 
 
         });
+
+        /** HELPERS **/
+
+        function getDisplayState() {
+            return $('#calcResults').css("display");
+        }
+        function logDisplayState() {
+            console.log('element\'s display:' + getDisplayState());
+        }
     });
 
 
