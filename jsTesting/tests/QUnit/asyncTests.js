@@ -12,7 +12,6 @@
     asyncTest("setTimeout async test", 1, function () {
 
         var msg;
-        someComplicatedSetupThatCouldFail();
 
         setTimeout(function () {
             msg = "Giants won the 2012 World Series";
@@ -24,7 +23,6 @@
             start(); // resume testrunner
         }
 
-        function someComplicatedSetupThatCouldFail() { }
     });
 
 

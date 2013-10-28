@@ -9,13 +9,17 @@
     var testCounter = 0;
     var resource = "foo";
 
+    /** SETUP AND HELPERS **/
 
     // A "test" that we'll run repeatedly
     // to show the state of our "resources"
     function moduleTest(name) {
         logTestCounter("Starting '{0}' test, ".format(name));
         logResourceState("Starting '{0}' test, ".format(name));
-        resource = name; // dirty the resource
+
+        // dirty the resource inside the test
+        resource = name;
+
         logResourceState("After dirtying the resource, ".format(name));
     }
 
@@ -28,7 +32,7 @@
 
 
 
-
+    /** TESTS **/
 
 
     /****** Module with no LifeCycle **********/
@@ -57,7 +61,7 @@
 
     /****** Module with LifeCycle **********/
 
-    // Use setup/teardown to isolate state and cleanup resources
+    // setup/teardown to isolate state and cleanup resources
 
     module("Module Tests", {
         setup: setup,
@@ -69,11 +73,13 @@
         logResourceState("At setup, ");
         logMoreState("At setup, ", this.moreState);
 
+        // mess with resources
         testCounter += 1;
         resource = "foo";
 
         // 'this' is created and shared with each test and with teardown
         this.moreState = 12345;
+
         logMoreState("After setup, ", this.moreState);
     }
 

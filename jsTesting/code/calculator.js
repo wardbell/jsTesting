@@ -8,6 +8,7 @@
 
     code.Calculator = Calculator;
 
+    // Calculator can display its results in DOM if element provided
     function Calculator(displayElement) {
         this.$el = $(displayElement || "<div></div>"); // wrap as jQuery element
     }
@@ -27,13 +28,14 @@
 
 
 
-    // report how calculator operations were called
+    // Log the requested operations
     Calculator.prototype.log = function (op, result) {
         var args = [].slice.call(arguments, 2).join(', ');
 
         var template = "calc.{0} called with args [{1}]; returned '{2}'";
         console.log(template.format(op, args, result));
-        return result; // does nothing
+
+        return result; 
     };
 
 
