@@ -57,10 +57,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="code\app-controller.js" />
     <Content Include="code\app.js" />
     <Content Include="code\calculator.js" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="tests\Jasmine\angularControllerSpec.js" />
     <Content Include="tests\Jasmine\angularDirectiveSpec.js" />
     <Content Include="tests\Jasmine\angularHelloWorldSpec.js" />
     <Content Include="tests\Jasmine\calculatorAsyncSpec.js" />
